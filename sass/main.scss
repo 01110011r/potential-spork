@@ -1,0 +1,41 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box
+ }
+ 
+ html {
+     scroll-behavior: smooth;
+ }
+ 
+ .container {
+     max-width: 1140px;
+     padding: 0 15px;
+     margin: 0 auto;
+ }
+ 
+ $headin-font:'DM Serif Display';
+ $main-font:'Public Sans';
+ $main-color: #36536B;
+ $secondary-color: #FBFCFE;
+ $btn-bg-color:#BA4270;
+ $main-bg-color:#EDF3F8;
+ @mixin tablet-for {
+     @media screen and (max-width: 992px) {
+         @content;
+     }
+ }
+ 
+ @mixin mobile-for {
+     @media screen and (max-width: 700px) {
+         @content;
+     }
+ }
+ 
+ @import '../fonts/link';
+ body {
+     overflow-x: hidden;
+     font-family: $main-font;
+ }
+ 
+ @import './all-blocks/full';

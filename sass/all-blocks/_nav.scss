@@ -1,0 +1,98 @@
+        nav {
+            background: $main-bg-color;
+        }
+        
+        .nav {
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            column-gap: 64px;
+            max-width: 100%;
+            @include mobile-for() {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        
+        .open-menu {
+            display: none;
+        }
+        
+        .menu {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            @include mobile-for() {
+                position: fixed;
+                top: 0vh;
+                flex-direction: column;
+                align-items: center;
+                height: 100vh;
+                justify-content: center;
+                row-gap: 32px;
+                width: 75%;
+                right: -100%;
+                color: $secondary-color;
+                background: $main-color;
+                transition: 0.5s;
+            }
+            &__ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                column-gap: 40px;
+                @include mobile-for() {
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 32px;
+                }
+                &-link {
+                    text-decoration: none;
+                    color: $main-color;
+                    text-transform: capitalize;
+                    @include mobile-for() {
+                        color: $secondary-color;
+                    }
+                }
+                &-link:hover {
+                    opacity: 0.5;
+                }
+            }
+            &__btn {
+                width: 173px;
+                height: 48px;
+                background: $btn-bg-color;
+                border: none;
+                border-radius: 24px;
+                color: $secondary-color;
+                cursor: progress;
+            }
+            &__btn:hover {
+                background: #DA6D97;
+            }
+        }
+        
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        .open-menu {
+            @include mobile-for() {
+                display: inline-block;
+            }
+        }
+        
+        input[type="checkbox"]:checked~.menu {
+            right: 0;
+        }
+        
+        .exit-menu {
+            display: none;
+            @include mobile-for() {
+                display: inline-block;
+                position: absolute;
+                top: 40px;
+                right: 10%;
+            }
+        }
